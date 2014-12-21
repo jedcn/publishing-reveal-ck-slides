@@ -2,8 +2,9 @@
 
 This repository *is* a set of slides.
 
-This repository is referenced in the [reveal-ck wiki][reveal-ck-wiki]
-at [Publishing-Slides][reveal-ck-wiki-publishing-slides].
+This repository is referenced and used as an example in the
+[reveal-ck wiki][reveal-ck-wiki] at
+[Publishing-Slides][reveal-ck-wiki-publishing-slides].
 
 [reveal-ck-wiki]: https://github.com/jedcn/reveal-ck/wiki
 [reveal-ck-wiki-publishing-slides]: https://github.com/jedcn/reveal-ck/wiki/Publishing-Slides
@@ -11,12 +12,12 @@ at [Publishing-Slides][reveal-ck-wiki-publishing-slides].
 ## How can a git repository *be* a set of slides?
 
 The `master` branch contains files that configure and serve as general
-inputs to a ruby gem called [reveal-ck][rubygems-reveal-ck].
+input to a ruby gem called [reveal-ck][rubygems-reveal-ck].
 
 [rubygems-reveal-ck]: http://rubygems.org/gems/reveal-ck
 
-The reveal-ck gem can take these inputs and generate a set of static
-HTML files. These files *are* a presentation when viewed in a browser.
+The reveal-ck gem takes this input and generates a set of static HTML
+files. These files *are* a presentation when viewed in a browser.
 
 Further-- if you take these static file and commit them to the
 `gh-pages` branch, then, through the magic of
@@ -29,6 +30,12 @@ And that's how this repository *is* a set of slides:
 
 * The source of the slides are on `master`, and
 * The generated result is on `gh-pages`.
+
+See [slides.md](slides.md) for the slide source and
+http://jedcn.github.io/publishing-reveal-ck-slides for the generated
+result.
+
+---
 
 # Details
 
@@ -57,6 +64,7 @@ echo 'Coming Soon' > index.html
 git add index.html
 git commit -m "Barebones gh-pages commit"
 git push origin gh-pages:gh-pages
+rm -rf /tmp/publishing-reveal-ck-slides
 ```
 
 These commands create a temporary clone in the `/tmp/` directory. I
@@ -81,3 +89,6 @@ git add .
 git commit -m "Files after initial reveal-ck generate"
 git push origin gh-pages:gh-pages
 ```
+
+And now the slides are available at:
+http://jedcn.github.io/publishing-reveal-ck-slides
