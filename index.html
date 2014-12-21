@@ -1,1 +1,216 @@
-Coming Soon
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+<title>Slides</title>
+
+<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<link rel="stylesheet" href="css/reveal-ck.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+
+  </head>
+
+  <body>
+    <div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+
+<h1>Publishing</h1>
+
+<h2>Slides</h2>
+
+<p>with reveal-ck</p>
+
+</section>
+<section>
+<section>
+
+<h1>Overview</h1>
+
+</section>
+<section>
+
+<h2>Use Two Branches</h2>
+
+<ul>
+<li><code>master</code></li>
+<li><code>gh-pages</code></li>
+</ul>
+
+</section>
+<section>
+
+<p><code>master</code> contains reveal-ck inputs</p>
+
+<p>(like <code>slides.md</code>)</p>
+
+</section>
+<section>
+
+<p><code>gh-pages</code> contains generated slides</p>
+
+<p>(contents of the <code>slides/</code> directory)</p>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Branch Creation</h1>
+
+</section>
+<section>
+
+<p><code>master</code> is created by default when you use git.</p>
+
+</section>
+<section>
+
+<p>Create <code>gh-pages</code> when you're ready to publish slides.</p>
+
+</section>
+<section>
+
+<p>Follow these <a href="https://help.github.com/articles/creating-project-pages-manually/">official instructions provided by github</a>.</p>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Branch Layout</h1>
+
+</section>
+<section>
+
+<p>Once you have two branches: <code>master</code> and <code>gh-pages</code>, where do clones
+live on your file system?</p>
+
+</section>
+<section>
+
+<p>I suggest that <code>master</code> be cloned to wherever you want, and that you
+gitignore <code>slides/</code>. Then..</p>
+
+</section>
+<section>
+
+<p>I suggest that you create a second clone in <code>slides/</code> and keep this on
+the <code>gh-pages</code> branch.</p>
+
+</section>
+<section>
+
+<p>If you do this.. you will naturally generate a fresh set of slides
+into <code>slides/</code>, then cd into that directory, commit, and push up.</p>
+
+</section>
+</section>
+<section>
+
+<h1>Viewing Slides</h1>
+
+</section>
+<section>
+
+<p>Pushing to <code>gh-pages</code> will cause you to use Github Pages.</p>
+
+</section>
+<section>
+
+<p>Your slides will be available at: http://$you.github.io/$project.</p>
+
+</section>
+<section>
+
+<h2>If...</h2>
+
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$you</td>
+<td>jedcn</td>
+</tr>
+<tr>
+<td>$project</td>
+<td>publishing-reveal-ck-slides</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section>
+
+<h2>Then</h2>
+
+<p><a href="http://jedcn.github.io/publishing-reveal-ck-slides">http://jedcn.github.io/publishing-reveal-ck-slides</a></p>
+
+</section>
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'default',
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  };
+  var configOptions = {"controls":true,"progress":true,"history":true,"center":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
