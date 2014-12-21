@@ -29,3 +29,55 @@ And that's how this repository *is* a set of slides:
 
 * The source of the slides are on `master`, and
 * The generated result is on `gh-pages`.
+
+# Details
+
+If you're looking to do the same thing, here's what I did:
+
+### Create Slides as you normally would
+
+First-- I created all of my slides initially and commited them on the
+`master` branch.
+
+### Create a gh-pages branch
+
+Next, I created and pushed up some placeholder content to Github Pages
+with the following commands (from
+[these official instructions][github-github-pages]):
+
+[github-github-pages]: https://help.github.com/articles/creating-project-pages-manually/
+
+```sh
+cd /tmp
+git clone https://github.com/jedcn/publishing-reveal-ck-slides
+cd publishing-reveal-ck-slides
+git checkout --orphan gh-pages
+git rm -rf .
+echo 'Coming Soon' > index.html
+git add index.html
+git commit -m "Barebones gh-pages commit"
+git push origin gh-pages:gh-pages
+```
+
+These commands create a temporary clone in the `/tmp/` directory. I
+had my original clone elsewhere on my computer.
+
+### Clone gh-pages into ./slides/
+
+Then I went back to my original clone, made sure `slides` was in my
+.gitignore, and ran the following commands:
+
+```sh
+rm -rf slides
+git clone https://github.com/jedcn/publishing-reveal-ck-slides.git --branch gh-pages --single-branch ./slides
+```
+
+### Finally, re-generate and push
+
+```
+bundle exec reveal-ck generate
+cd slides
+git add .
+git commit -m "Files after initial reveal-ck generate"
+git push origin gh-pages:gh-pages
+```
